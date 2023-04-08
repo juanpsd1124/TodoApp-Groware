@@ -1,0 +1,97 @@
+<form action="" [formGroup]="taskForm">
+
+    <div class="row">
+        <div class="col-md-12">
+            <label class="mb-3" for="">Nombre de tarea:</label>
+            <input type="text" 
+                    class="form-control form-control-lg mb-4" 
+                    id="inputAddress" 
+                    placeholder="Ingrese nombre de tarea"
+                    formControlName="name">
+        </div>
+
+        <div class="col-md-12">
+            <label class="mb-3" for="">Descripcion de tarea:</label>
+            <textarea type="text" 
+                      class="form-control form-control-lg mb-4" 
+                      id="exampleFormControlTextarea1" 
+                      rows="2" 
+                      placeholder="Ingrese descripcion de tarea"
+                      formControlName="description"> </textarea>
+        </div>
+    </div>
+
+    <div class="row mt-2">
+        <div class="col-md-4">
+            <label class="mb-3" for="">Responsable:</label>
+            <input type="text" 
+                   class="form-control form-select-lg" 
+                   id="inputAddress" 
+                   placeholder="Ingrese responsable de tarea"
+                   formControlName="owner">
+        </div>
+
+        <div class="col-md-4">
+            <label class="mb-3" for="">Duración:</label>
+            <select class="form-select form-select-lg"
+                    formControlName="duration">
+                <option selected> Seleccione duracion</option>
+                <option value="1">1 Hora</option>
+                <option value="2">2 Horas</option>
+                <option value="3">3 Horas</option>
+                <option value="4">4 Horas</option>
+                <option value="5">5 Horas</option>
+                <option value="6">6 Horas</option>
+                <option value="7">7 Horas</option>
+                <option value="8">8 Horas</option>
+                <option value="9">9 Horas</option>
+                <option value="10">10 Horas</option>
+                <option value="11">11 Horas</option>
+                <option value="12">12 Horas</option>
+                <option value="13">13 Horas</option>
+                <option value="14">14 Horas</option>
+                <option value="15">15 Horas</option>
+                <option value="16">16 Horas</option>
+                <option value="17">17 Horas</option>
+                <option value="18">18 Horas</option>
+                <option value="19">19 Horas</option>
+                <option value="20">20 Horas</option>
+                <option value="21">21 Horas</option>
+                <option value="22">22 Horas</option>
+                <option value="23">23 Horas</option>
+                <option value="24">24 Horas</option>
+            </select>
+        </div>
+
+        <div class="col-md-4">
+            <label class="mb-3" for="">Estado:</label>
+            <select class="form-select form-select-lg"
+                    formControlName="status">
+                <option selected> Seleccione estado de tarea</option>
+                <option value="start">Inicio</option>
+                <option value="inProgress">En proceso</option>
+                <option value="finished">Terminada</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+
+        <div class="col d-flex">
+            <button type="button" 
+                    class="btn btn-success btn-lg btn-block d-flex justify-content-center align-items-center flex-grow-1"
+                    (click)="crear()">
+                    <mat-icon>done</mat-icon> Crear Tarea
+            </button>
+          </div>
+          
+          <div class="col d-flex">
+            <button type="button" 
+                    class="btn btn-danger btn-lg btn-block d-flex justify-content-center align-items-center flex-grow-1"
+                    (click)="cancelar()">
+                    <mat-icon>cancel</mat-icon> Cancelar
+            </button>
+          </div>
+    </div>
+
+</form>
