@@ -1,32 +1,99 @@
-<div class="justify-content-between taskCard">
+<div class="justify-content-between taskCard "
+     >
 
-    <label class="taskCard__title view" for="">Preparar la cena</label>
-    <label class="taskCard__description view"for="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </label>
+    <label *ngIf="!editing" class="taskCard__title view" for=""> {{task.taskName}} </label>
+    <label *ngIf="!editing" class="taskCard__description" for=""> {{task.description}} </label>
 
-    <input class="form-control edit" type="text">
-    <input class="form-control edit" type="text">
+    <input *ngIf="editing" class="form-control  form-control-lg" type="text" [formControl]="taskNameInput">
+    <input *ngIf="editing" class="form-control  form-control-lg"  type="text" [formControl]="taskDescriptionInput">
 
     <div class="taskCard__info">
 
-      <p class="infoTitle">Duracion: <span class="infoData view">1h</span> <input class="form-control form-control-sm edit" type="text"> </p>
-      <p class="infoTitle">Estado: <span class="infoData view">Pendiente</span> <input class="form-control form-control-sm edit" type="text"> </p>
-      <p class="infoTitle">Propietario: <span class="infoData view">Juan Posada</span> <input class="form-control edit" type="text"> </p>
+      <p class="infoTitle">Propietario: 
+        <span *ngIf="!editing" class="infoData">{{task.owner}}</span> 
+        <input *ngIf="editing" class="form-control form-control-lg " type="text" [formControl]="taskOwnerInput"> 
+      </p>
+
+      <p class="infoTitle">Duracion: 
+        <span *ngIf="!editing" class="infoData">{{task.duration}}h</span> 
+
+        <select *ngIf="editing" class="form-select form-select-lg " type="text" [formControl]="taskDurationInput"> 
+          <option value="selected"></option>
+          <option value="1">1 Hora</option>
+                <option value="2">2 Horas</option>
+                <option value="3">3 Horas</option>
+                <option value="4">4 Horas</option>
+                <option value="5">5 Horas</option>
+                <option value="6">6 Horas</option>
+                <option value="7">7 Horas</option>
+                <option value="8">8 Horas</option>
+                <option value="9">9 Horas</option>
+                <option value="10">10 Horas</option>
+                <option value="11">11 Horas</option>
+                <option value="12">12 Horas</option>
+                <option value="13">13 Horas</option>
+                <option value="14">14 Horas</option>
+                <option value="15">15 Horas</option>
+                <option value="16">16 Horas</option>
+                <option value="17">17 Horas</option>
+                <option value="18">18 Horas</option>
+                <option value="19">19 Horas</option>
+                <option value="20">20 Horas</option>
+                <option value="21">21 Horas</option>
+                <option value="22">22 Horas</option>
+                <option value="23">23 Horas</option>
+                <option value="24">24 Horas</option>
+        </select> 
+      </p>
+
+      <p class="infoTitle">Estado: 
+        <span *ngIf="!editing" class="infoData">{{task.status}}</span> 
+        <select *ngIf="editing" class="form-select form-select-lg " type="text" [formControl]="taskStatusInput"> 
+          <option selected> Seleccione estado tarea</option>
+                <option value="Iniciada">Iniciada</option>
+                <option value="En Progreso">En Proceso</option>
+                <option value="Terminada">Terminada</option>
+        </select> 
+      </p>
+
     </div>
 
     <div class="row taskCard__buttons">
 
-      <div class="col d-flex">
+      <div *ngIf="!editing; else saveButton" class="col d-flex">
         <button type="button" 
-                class="btn btn-warning btn-lg btn-block d-flex justify-content-center align-items-center flex-grow-1">
+                class="btn btn-warning btn-lg btn-block d-flex justify-content-center align-items-center flex-grow-1"
+                (click)="editTask()">
                 <mat-icon>edit</mat-icon> Editar
         </button>
       </div>
       
       <div class="col d-flex">
         <button type="button" 
-                class="btn btn-danger btn-lg btn-block d-flex justify-content-center align-items-center flex-grow-1">
+                class="btn btn-danger btn-lg btn-block d-flex justify-content-center align-items-center flex-grow-1"
+                (click)="deleteTask()">
                 <mat-icon>delete</mat-icon> Borrar
         </button>
       </div>
+
+      <div *ngIf="editing" class="col d-flex">
+        <button type="button" 
+                class="btn btn-secondary btn-lg btn-block d-flex justify-content-center align-items-center flex-grow-1"
+                (click)="cancelEdit()">
+                <mat-icon>cancel</mat-icon> Cancelar
+        </button>
+      </div>
+
+     
     </div>
+
+    <ng-template #saveButton >
+        <button type="button" 
+        class="btn btn-success btn-lg btn-block d-flex justify-content-center align-items-center flex-grow-1"
+        (click)="saveTask()">
+        <mat-icon>edit</mat-icon> Guardar
+        </button>
+    </ng-template>
+
+
 </div>

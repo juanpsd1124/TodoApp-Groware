@@ -7,7 +7,7 @@
                     class="form-control form-control-lg mb-4" 
                     id="inputAddress" 
                     placeholder="Ingrese nombre de tarea"
-                    formControlName="name">
+                    formControlName="taskName">
         </div>
 
         <div class="col-md-12">
@@ -35,7 +35,7 @@
             <label class="mb-3" for="">Duración:</label>
             <select class="form-select form-select-lg"
                     formControlName="duration">
-                <option selected> Seleccione duracion</option>
+                <option value="0" disabled selected hidden> Seleccione duracion</option>
                 <option value="1">1 Hora</option>
                 <option value="2">2 Horas</option>
                 <option value="3">3 Horas</option>
@@ -67,10 +67,10 @@
             <label class="mb-3" for="">Estado:</label>
             <select class="form-select form-select-lg"
                     formControlName="status">
-                <option selected> Seleccione estado de tarea</option>
-                <option value="start">Inicio</option>
-                <option value="inProgress">En proceso</option>
-                <option value="finished">Terminada</option>
+                <option value="" disabled selected hidden> Seleccione estado inicial de tarea</option>
+                <option value="Iniciada">Inicio</option>
+                <option value="En Progreso">En proceso</option>
+                <option value="Terminada">Terminada</option>
             </select>
         </div>
     </div>

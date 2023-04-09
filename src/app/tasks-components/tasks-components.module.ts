@@ -5,6 +5,7 @@ import { MaterialModule } from '../shared/modules/material/material.module';
 import { TaskAddComponent } from './task-add/task-add.component';
 import { TaskListComponent } from './task-list/task-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -14,11 +15,11 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   exports:[
     TaskAddComponent,
-    TaskItemComponent
+    TaskItemComponent,
   ]
 })
 export class TasksComponentsModule { }

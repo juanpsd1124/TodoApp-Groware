@@ -1,6 +1,8 @@
 
-<div class="row">
-    <app-task-item class="col-4"></app-task-item>
-    <app-task-item class="col-4"></app-task-item>
-    <app-task-item class="col-4"></app-task-item>
+<div class="row row-cols-3">
+
+    <app-task-item class="col"
+                    *ngFor="let task of tasks"
+                   [task]="task"></app-task-item>
+
 </div>
