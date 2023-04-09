@@ -4,40 +4,19 @@ import { createTask, deleteTask, editTask } from './task-actions';
 
 
 export const initialState: Task[] = [
-  new Task('Hacer la cena',
-          'Hacerla lo mejor que se pueda',
+  new Task('Preparar el almuerzo',
+          'Se debe preparar el almuerzo de toda la semana',
           'Juan Posada',
-          1,
+          2,
           "Iniciada"),
-  new Task('Hacer la cena',
-          'Hacerla lo mejor que se pueda',
+
+
+  new Task('Pagar Servicios',
+          'Se debe pagar todos los servicios antes de fecha de corte',
           'Juan Posada',
           1,
-          "En Progreso"),
+          "Terminada"),
 
-  new Task('Hacer la cena',
-        'Hacerla lo mejor que se pueda',
-    'Juan Posada',
-    1,
-    "Terminada"),
-
-  new Task('Hacer la cena',
-    'Hacerla lo mejor que se pueda',
-    'Juan Posada',
-    1,
-    "Terminada"),
-  
-    new Task('Hacer la cena',
-    'Hacerla lo mejor que se pueda',
-    'Juan Posada',
-    1,
-    "Terminada"),
-
-    new Task('Hacer la cena',
-    'Hacerla lo mejor que se pueda',
-    'Juan Posada',
-    1,
-    "Terminada")
 ];
 
 const _taskReducer = createReducer(
