@@ -39,6 +39,7 @@ export class TaskAddComponent {
 
     this.router.navigate(['/tasks-list']);
     this.toastrSVC.success( 'La tarea ha sido creada')
+    
   }
 
   cancelar(){

@@ -23,6 +23,8 @@ export class TaskListComponent implements OnInit{
 
     this.store.select('task').subscribe ( task => { 
       this.tasks = task;
+      localStorage.setItem("tasklist", JSON.stringify(task));
+      //console.log(this.tasks)
     } );
 
    };
